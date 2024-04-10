@@ -18,13 +18,14 @@ public class Book {
     private String title;
     private int edNumber;
     private String copyright;
+
     @ManyToMany
     @JoinTable(
             name = "author_isbn",
             joinColumns = @JoinColumn(name = "isbn"),
             inverseJoinColumns = @JoinColumn(name = "id")
     )
-    private List<Author> authors;
+    private List<Author> authors = new ArrayList<>();
 
     /**
      * This method returns the ISBN

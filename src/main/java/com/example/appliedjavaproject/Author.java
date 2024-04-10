@@ -17,6 +17,7 @@ public class Author {
     private int authorID;
     private String authorFirstName;
     private String authorLastName;
+
     @ManyToMany(mappedBy = "authors")
     @JsonBackReference
     private List<Book> books;
